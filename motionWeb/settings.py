@@ -91,13 +91,8 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
        'NAME': 'motionweb',
-
-       'USER': 'motionweb',
-       'PASSWORD': 'motionweb_llc',
-
        'USER': 'motionweb_user',
        'PASSWORD': 'motionweb_123',
-
        'HOST': 'pgdb',
        # 'HOST': 'localhost',
        'PORT': ''
