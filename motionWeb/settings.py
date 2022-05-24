@@ -23,6 +23,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+SECRET_ADMIN_KEY = '12345'
+
+DEFAULT_PASSWORD = '123456'
+
 
 # Application definition
 
