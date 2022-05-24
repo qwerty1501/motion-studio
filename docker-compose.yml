@@ -6,7 +6,7 @@ services:
     restart: always
     command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations &&
       python3 manage.py migrate &&
-      gunicorn -b 0.0.0.0:8000 core.wsgi --reload"
+      gunicorn -b 0.0.0.0:8000 motionWeb.wsgi --reload"
     volumes:
         - ./:/app
         - ./media:/app/media/
