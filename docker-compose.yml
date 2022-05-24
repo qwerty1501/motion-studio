@@ -17,7 +17,7 @@ services:
         - pgdb
 
   pgdb:
-    image: postgres:motionweb
+    image: postgres:12
     restart: always
     container_name: pgdb
     volumes:
