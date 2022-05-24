@@ -1,4 +1,3 @@
-import django_heroku
 from pathlib import Path
 import dj_database_url
 import os
@@ -95,7 +94,7 @@ DATABASES = {
        'PASSWORD': 'motionweb_123',
        'HOST': 'postdb',
        # 'HOST': 'localhost',
-       'PORT': ''
+       'PORT': '',
    }
 }
 
@@ -175,5 +174,3 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())

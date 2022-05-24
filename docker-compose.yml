@@ -1,21 +1,6 @@
-version: "3.3"
+version: "3.9"
 
 services:
-  web:
-    build: .
-    restart: always
-    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations &&
-      python3 manage.py migrate &&
-      gunicorn -b 0.0.0.0:8000 motionWeb.wsgi --reload"
-    volumes:
-        - ./:/app
-        - ./media:/app/media/
-        - ./static:/app/static/
-    ports:
-        - "8000:8000"
-    depends_on:
-        - postdb
-
   postdb:
     image: postgres:12
     restart: always
@@ -28,6 +13,21 @@ services:
       - POSTGRES_DB=motionweb
       - POSTGRES_USER=motionweb_user
       - POSTGRES_PASSWORD=motionweb_123
+
+  web:
+    build: .
+    restart: always
+    command: sh -c "python3 manage.py collectstatic --no-input && python3 manage.py makemigrations &&
+      python3 manage.py migrate &&
+      gunicorn -w 7 -b 0.0.0.0:8000 motionWeb.wsgi --reload"
+    volumes:
+        - ./:/app
+        - ./media:/app/media/
+        - ./static:/app/static/
+    ports:
+        - "8000:8000"
+    depends_on:
+        - postdb
 
 
   nginx:

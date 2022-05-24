@@ -1,4 +1,0 @@
-make: Entering directory `/Users/sinon_16/Desktop/Motion_progect/motionApp'
-docker-compose -f docker-compose.dev.yml up
-make: Leaving directory `/Users/sinon_16/Desktop/Motion_progect/motionApp'
- 
