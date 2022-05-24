@@ -14,22 +14,18 @@ services:
     ports:
         - "8000:8000"
     depends_on:
-        - pgdb
+        - postdb
 
-  pgdb:
+  postdb:
     image: postgres:12
     restart: always
-    container_name: pgdb
+    container_name: postdb
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
       - POSTGRES_DB=motionweb
-
-      - POSTGRES_USER=motionweb
-      - POSTGRES_PASSWORD=motionweb_llc
-
       - POSTGRES_USER=motionweb_user
       - POSTGRES_PASSWORD=motionweb_123
 
