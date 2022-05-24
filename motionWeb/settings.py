@@ -23,6 +23,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+SECRET_ADMIN_KEY = '12345'
+
+DEFAULT_PASSWORD = '123456'
+
 
 # Application definition
 
@@ -87,8 +91,13 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
        'NAME': 'motionweb',
+<<<<<<< HEAD
        'USER': 'motionweb',
        'PASSWORD': 'motionweb_llc',
+=======
+       'USER': 'motionweb_user',
+       'PASSWORD': 'motionweb_123',
+>>>>>>> f5f8660d9d1657ca454b37abef37d1305a4acf41
        'HOST': 'pgdb',
        # 'HOST': 'localhost',
        'PORT': ''

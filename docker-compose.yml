@@ -17,7 +17,7 @@ services:
         - pgdb
 
   pgdb:
-    image: postgres:latest
+    image: postgres:motionweb
     restart: always
     container_name: pgdb
     volumes:
@@ -26,8 +26,13 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_DB=motionweb
+<<<<<<< HEAD
       - POSTGRES_USER=motionweb
       - POSTGRES_PASSWORD=motionweb_llc
+=======
+      - POSTGRES_USER=motionweb_user
+      - POSTGRES_PASSWORD=motionweb_123
+>>>>>>> f5f8660d9d1657ca454b37abef37d1305a4acf41
 
   nginx:
       image: linuxserver/swag
