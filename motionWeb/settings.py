@@ -93,7 +93,7 @@ DATABASES = {
        'NAME': 'motionweb',
        'USER': 'motionweb_user',
        'PASSWORD': 'motionweb_123',
-       'HOST': 'pgdb',
+       'HOST': 'postdb',
        # 'HOST': 'localhost',
        'PORT': ''
    }
