@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'motionWeb.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'limitless',
-       'USER': 'limitless_user',
-       'PASSWORD': 'limitless_123',
+       'NAME': 'motionweb',
+       'USER': 'motionweb',
+       'PASSWORD': 'motionweb_llc',
        'HOST': 'pgdb',
        # 'HOST': 'localhost',
        'PORT': ''

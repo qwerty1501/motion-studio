@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 
 services:
   web:
@@ -25,9 +25,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=limitless
-      - POSTGRES_USER=limitless_user
-      - POSTGRES_PASSWORD=limitless_123
+      - POSTGRES_DB=motionweb
+      - POSTGRES_USER=motionweb
+      - POSTGRES_PASSWORD=motionweb_llc
 
   nginx:
       image: linuxserver/swag
@@ -35,8 +35,8 @@ services:
       environment:
           - PUID=1000
           - PGID=1000
-          - TZ=Asia/Dubai
-          - URL=limitless-connection.com
+          - TZ=Asia/Bishkek
+          - URL=motion-web.io
           - SUBDOMAINS=api
           - VALIDATION=http
           - ONLY_SUBDOMAINS=true
