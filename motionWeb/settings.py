@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'ckeditor',
+    # 'parler',
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -86,16 +87,23 @@ WSGI_APPLICATION = 'motionWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'motionweb',
+#        'USER': 'motionweb_user',
+#        'PASSWORD': 'motionweb_123',
+#        'HOST': 'postdb',
+#        # 'HOST': 'localhost',
+#        'PORT': '',
+#    }
+# }
+
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'motionweb',
-       'USER': 'motionweb_user',
-       'PASSWORD': 'motionweb_123',
-       'HOST': 'postdb',
-       # 'HOST': 'localhost',
-       'PORT': '',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # CKEDITOR
@@ -159,6 +167,7 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -166,11 +175,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CLOUDINARY_STORAGE
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your_cloud_name',
-    'API_KEY': 'your_api_key',
-    'API_SECRET': 'your_api_secret'
-}
+if not DEBUG:
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': 'sinon',
+        'API_KEY': '787637673979431',
+        'API_SECRET': 'y-lqXEcOSKpXW_4TKmjvjjBOxcA'
+    }
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
